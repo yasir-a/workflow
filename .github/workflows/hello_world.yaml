@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hello World	
-      - run: echo "Hi Everyone"
+        run: echo "Hi Everyone"
         shell: bash
 
   goodbye:
