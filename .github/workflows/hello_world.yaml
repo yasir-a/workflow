@@ -10,4 +10,16 @@ jobs:
         with:
           node-version: '14'
       - run: npm install -g bats
-      - run: bats -v 
+      - run: bats -v
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello World	
+      - run echo: "Hi Everyone"
+        shell: bash
+  goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Goodbye
+        run echo: "Bye everyone"
+        shell: bash	 	  
