@@ -2,7 +2,7 @@ name: learn-github-actions
 run-name: ${{github.actor}} is learning github actions
 on: [push]
 jobs:
-  check=bats-version:
+  check-bats-version:
     runs-on: ubantu-latest
     steps:
       - uses: actions/checkouts@v3
