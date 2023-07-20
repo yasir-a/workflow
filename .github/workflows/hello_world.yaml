@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hello World	
-      - run echo: "Hi Everyone"
+      - run: echo "Hi Everyone"
         shell: bash
   goodbye:
     runs-on: ubuntu-latest
     steps:
       - name: Goodbye
-        run echo: "Bye everyone"
+        run: echo "Bye everyone"
         shell: bash	 	  
