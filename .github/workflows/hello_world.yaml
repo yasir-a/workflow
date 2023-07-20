@@ -1,47 +1,13 @@
-name: Hello World Workflow
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-      - main
-  workflow_dispatch:
-
+name: learn-github-actions
+run-name: ${{github.actor}} is learning github actions
+on: [push]
 jobs:
-  hello:
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-      - main
-  workflow_dispatch:
-
-jobs:
-  hello:
-    runs_on: ubuntu-latest
+  check=bats-version:
+    runs-on: ubantu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Hello world
-        run: echo "Hi there"
-        shell: bash
-
-  goodbye:
-    runs_on: ubuntu-latest
-    steps:
-      - name: goodbye world
-        run: echo "Gooood bye everyone"
-        shell: bash    runs_on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Hello world
-        run: echo "Hi there"
-        shell: bash
-
-  goodbye:
-    runs_on: ubuntu-latest
-    steps:
-      - name: goodbye world
-        run: echo "Gooood bye everyone"
-        shell: bash
+      - uses: actions/checkouts@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install -g bats
+      - run: bats -v 
